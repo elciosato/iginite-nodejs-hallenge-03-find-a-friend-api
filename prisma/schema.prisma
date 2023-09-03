@@ -16,7 +16,7 @@ model Organization {
   passwordHash      String
   responsablePerson String
   postCode          String
-  Address           String
+  address           String
   whatsapp          String
 
   @@map("organizations")
