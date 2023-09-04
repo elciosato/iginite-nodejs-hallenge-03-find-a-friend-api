@@ -16,6 +16,8 @@ model Organization {
   passwordHash      String
   responsablePerson String
   postCode          String
+  city              String
+  state             String
   address           String
   whatsapp          String
 

@@ -8,6 +8,8 @@ interface CreateOrganizationRequest {
   password: string;
   responsablePerson: string;
   postCode: string;
+  city: string;
+  state: string;
   address: string;
   whatsapp: string;
 }
@@ -24,6 +26,8 @@ export class CreateOrganizationUseCase {
     password,
     responsablePerson,
     postCode,
+    city,
+    state,
     address,
     whatsapp,
   }: CreateOrganizationRequest): Promise<CreateOrganizationResponse> {
@@ -42,6 +46,8 @@ export class CreateOrganizationUseCase {
       passwordHash,
       responsablePerson,
       postCode,
+      city,
+      state,
       address,
       whatsapp,
     });

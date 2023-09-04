@@ -14,6 +14,8 @@ export class InMemoryOrganizationsRepository
       passwordHash: data.passwordHash,
       responsablePerson: data.responsablePerson,
       postCode: data.postCode,
+      city: data.city,
+      state: data.state,
       address: data.address,
       whatsapp: data.whatsapp,
     };

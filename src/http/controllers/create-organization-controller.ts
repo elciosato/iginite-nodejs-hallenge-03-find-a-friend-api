@@ -11,12 +11,22 @@ export async function createOrganizationController(
     password: z.string().min(6),
     responsablePerson: z.string(),
     postCode: z.string(),
+    city: z.string(),
+    state: z.string(),
     address: z.string(),
     whatsapp: z.string(),
   });
 
-  const { email, password, responsablePerson, postCode, address, whatsapp } =
-    organizationBodySchema.parse(request.body);
+  const {
+    email,
+    password,
+    responsablePerson,
+    postCode,
+    city,
+    state,
+    address,
+    whatsapp,
+  } = organizationBodySchema.parse(request.body);
 
   const createOrganizationUseCase = MakeCreateOrganizationUseCase();
 
@@ -25,6 +35,8 @@ export async function createOrganizationController(
     password,
     responsablePerson,
     postCode,
+    city,
+    state,
     address,
     whatsapp,
   });

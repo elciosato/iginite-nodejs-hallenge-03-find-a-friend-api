@@ -22,6 +22,8 @@ describe("Authenticate Organization", () => {
       responsablePerson: "John Doe",
       address: "address",
       postCode: "12345-123",
+      city: "Curitiba",
+      state: "PR",
       whatsapp: "+99 999999999",
     });
 
@@ -49,6 +51,8 @@ describe("Authenticate Organization", () => {
       responsablePerson: "John Doe",
       address: "address",
       postCode: "12345-123",
+      city: "Curitiba",
+      state: "PR",
       whatsapp: "+99 999999999",
     });
 

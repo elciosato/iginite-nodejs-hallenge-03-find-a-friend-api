@@ -21,6 +21,8 @@ describe("Create Organization", () => {
       password: "123123",
       responsablePerson: "John Doe",
       address: "address",
+      city: "Curitiba",
+      state: "PR",
       postCode: "12345-123",
       whatsapp: "+99 999999999",
     });
@@ -34,6 +36,8 @@ describe("Create Organization", () => {
       password: "123123",
       responsablePerson: "John Doe",
       address: "address",
+      city: "Curitiba",
+      state: "PR",
       postCode: "12345-123",
       whatsapp: "+99 999999999",
     });
@@ -51,6 +55,8 @@ describe("Create Organization", () => {
       password: "123123",
       responsablePerson: "John Doe",
       address: "address",
+      city: "Curitiba",
+      state: "PR",
       postCode: "12345-123",
       whatsapp: "+99 999999999",
     });
@@ -62,6 +68,8 @@ describe("Create Organization", () => {
         responsablePerson: "John Doe",
         address: "address",
         postCode: "12345-123",
+        city: "Curitiba",
+        state: "PR",
         whatsapp: "+99 999999999",
       });
     }).rejects.toBeInstanceOf(OrganizationAlreadyExistsError);
