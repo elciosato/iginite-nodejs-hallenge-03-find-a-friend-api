@@ -24,10 +24,21 @@ export class InMemoryOrganizationsRepository
 
     return organization;
   }
+
   async findByEmail(email: string) {
     const organization = this.organizationsRepository.find(
       (o) => o.email === email
     );
+
+    if (!organization) {
+      return null;
+    }
+
+    return organization;
+  }
+
+  async findById(id: string) {
+    const organization = this.organizationsRepository.find((o) => o.id === id);
 
     if (!organization) {
       return null;
