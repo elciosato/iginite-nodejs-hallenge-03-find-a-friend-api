@@ -13,7 +13,7 @@ This is an API for animal adoption, the **FindAFriend API**, using SOLID princip
 
 [ ] - It must be possible to view details of a pet available for adoption.
 
-[ ] - It must be possible to register as an organization (ORG).
+[X] - It must be possible to register as an organization (ORG).
 
 [ ] - It must be possible to log in as an organization (ORG).
 
