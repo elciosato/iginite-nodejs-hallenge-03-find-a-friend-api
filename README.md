@@ -15,15 +15,15 @@ This is an API for animal adoption, the **FindAFriend API**, using SOLID princip
 
 [X] - It must be possible to register as an organization (ORG).
 
-[ ] - It must be possible to log in as an organization (ORG).
+[X] - It must be possible to log in as an organization (ORG).
 
 ## Business Rules
 
 [ ] - To list the pets, it is mandatory to provide the city.
 
-[ ] - An ORG must have an address and a WhatsApp number.
+[X] - An ORG must have an address and a WhatsApp number.
 
-[ ] - A pet must be associated with an ORG.
+[X] - A pet must be associated with an ORG.
 
 [ ] - The user who wants to adopt will contact the ORG via WhatsApp.
 

@@ -20,6 +20,71 @@ model Organization {
   state             String
   address           String
   whatsapp          String
+  Pet               Pet[]
 
   @@map("organizations")
+}
+
+enum Age {
+  Newborn
+  Child
+  Young
+  Adult
+  Senior
+  Elderly
+}
+
+enum Size {
+  Tiny
+  Miniature
+  Medium
+  Standard
+  Large
+  Colossal
+}
+
+enum EnergyLevel {
+  Low
+  Moderate
+  Average
+  High
+  Intense
+}
+
+enum IndependenceLevel {
+  Dependent
+  Partially
+  Moderately
+  Mostly
+  Fully
+}
+
+enum PhysicalSpace {
+  Small
+  Medium
+  Large
+  Huge
+}
+
+enum Availability {
+  Available
+  Reserved
+  Unavailable
+}
+
+model Pet {
+  id                String            @id @default(uuid())
+  name              String
+  description       String
+  age               Age
+  size              Size
+  energyLevel       EnergyLevel
+  independenceLevel IndependenceLevel
+  physicalSpace     PhysicalSpace
+  availability      Availability
+
+  org            Organization @relation(fields: [organizationId], references: [id])
+  organizationId String
+
+  @@map("pets")
 }
