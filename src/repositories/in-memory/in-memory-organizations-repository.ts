@@ -1,8 +1,7 @@
-import { $Enums, Organization, Pet, Prisma } from "@prisma/client";
+import { Organization, Prisma } from "@prisma/client";
 import { OrganizationsRepository } from "../organizations-repository";
 import { randomUUID } from "node:crypto";
 import { ListPetsRequest } from "../../use-cases/list-pets-use-case";
-import { InMemoryPetsRepository } from "./in-memory-pets-repository";
 
 export class InMemoryOrganizationsRepository
   implements OrganizationsRepository
