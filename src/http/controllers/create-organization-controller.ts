@@ -1,5 +1,5 @@
 import { FastifyReply, FastifyRequest } from "fastify";
-import { MakeCreateOrganizationUseCase } from "../../use-cases/factories/make-create-organization-use-case";
+import { makeCreateOrganizationUseCase } from "../../use-cases/factories/make-create-organization-use-case";
 import { z } from "zod";
 
 export async function createOrganizationController(
@@ -28,7 +28,7 @@ export async function createOrganizationController(
     whatsapp,
   } = organizationBodySchema.parse(request.body);
 
-  const createOrganizationUseCase = MakeCreateOrganizationUseCase();
+  const createOrganizationUseCase = makeCreateOrganizationUseCase();
 
   const organization = await createOrganizationUseCase.execute({
     email,
