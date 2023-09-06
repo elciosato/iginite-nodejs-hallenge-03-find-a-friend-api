@@ -64,6 +64,18 @@ describe("List Pets", () => {
       organizationId: organization2.id,
     });
 
+    await petsRepository.create({
+      name: "Toto1",
+      description: "Cute Puppy",
+      age: "Adult",
+      size: "Miniature",
+      energyLevel: "Average",
+      independenceLevel: "Dependent",
+      physicalSpace: "Medium",
+      availability: "Available",
+      organizationId: organization2.id,
+    });
+
     const organization3 = await organizationsRepository.create({
       email: "johndoe3@example.com",
       passwordHash: await hash("123123", 6),
@@ -87,7 +99,12 @@ describe("List Pets", () => {
       organizationId: organization3.id,
     });
 
-    const { pets } = await sut.execute({ city: "Curitiba", state: "PR" });
+    const { pets } = await sut.execute({
+      city: "Curitiba",
+      state: "PR",
+      age: "Newborn",
+      size: "Miniature",
+    });
 
     expect(pets.length).toEqual(2);
     expect(pets).toEqual([

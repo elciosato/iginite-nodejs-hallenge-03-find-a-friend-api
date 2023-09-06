@@ -1,5 +1,5 @@
 import { Prisma, $Enums, Pet, Organization } from "@prisma/client";
-import { PetsRepository } from "../pets-repository";
+import { OrgsFilters, PetsRepository } from "../pets-repository";
 import { randomUUID } from "crypto";
 
 export class InMemoryPetsRepository implements PetsRepository {
@@ -34,13 +34,28 @@ export class InMemoryPetsRepository implements PetsRepository {
     return pet;
   }
 
-  async findByOrgs(orgs: Organization[]) {
+  async findByOrgsFilters({
+    orgs,
+    age,
+    size,
+    energyLevel,
+    independenceLevel,
+    physicalSpace,
+  }: OrgsFilters) {
     const pets: Pet[] = [];
 
     orgs.forEach((o) => {
-      const petsByOrgs = this.petsRepository.filter(
-        (p) => p.organizationId === o.id && p.availability === "Available"
-      );
+      const petsByOrgs = this.petsRepository.filter((p) => {
+        return (
+          p.organizationId === o.id &&
+          p.availability === "Available" &&
+          (!age || p.age === age) &&
+          (!size || p.size === size) &&
+          (!energyLevel || p.energyLevel === energyLevel) &&
+          (!independenceLevel || p.independenceLevel === independenceLevel) &&
+          (!physicalSpace || p.physicalSpace === physicalSpace)
+        );
+      });
       pets.push(...petsByOrgs);
     });
 

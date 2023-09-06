@@ -9,7 +9,7 @@ This is an API for animal adoption, the **FindAFriend API**, using SOLID princip
 
 [X] - It must be possible to list all pets available for adoption in a city.
 
-[ ] - It must be possible to filter pets by their characteristics.
+[X] - It must be possible to filter pets by their characteristics.
 
 [X] - It must be possible to view details of a pet available for adoption.
 
@@ -27,7 +27,7 @@ This is an API for animal adoption, the **FindAFriend API**, using SOLID princip
 
 [X] - The user who wants to adopt will contact the ORG via WhatsApp.
 
-[ ] - All filters, other than the city, are optional.
+[X] - All filters, other than the city, are optional.
 
 [ ] - For an ORG to access the application as an admin, they need to be logged in.
 
