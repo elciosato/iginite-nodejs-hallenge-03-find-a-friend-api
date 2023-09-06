@@ -1,8 +1,8 @@
-import { InMemoryOrganizationsRepository } from "../../repositories/in-memory/in-memory-organizations-repository";
+import { PrismaOrganizationsRepository } from "../../repositories/prisma/prisma-organizations-repository";
 import { CreateOrganizationUseCase } from "../create-organization-use-case";
 
-export function MakeCreateOrganizationUseCase() {
-  const organizationsRepository = new InMemoryOrganizationsRepository();
+export function makeCreateOrganizationUseCase() {
+  const organizationsRepository = new PrismaOrganizationsRepository();
   const useCase = new CreateOrganizationUseCase(organizationsRepository);
 
   return useCase;
