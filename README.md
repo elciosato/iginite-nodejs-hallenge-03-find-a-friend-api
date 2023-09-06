@@ -5,13 +5,13 @@ This is an API for animal adoption, the **FindAFriend API**, using SOLID princip
 
 ## Application Rules
 
-[ ] - It must be possible to register a pet.
+[X] - It must be possible to register a pet.
 
-[ ] - It must be possible to list all pets available for adoption in a city.
+[X] - It must be possible to list all pets available for adoption in a city.
 
 [ ] - It must be possible to filter pets by their characteristics.
 
-[ ] - It must be possible to view details of a pet available for adoption.
+[X] - It must be possible to view details of a pet available for adoption.
 
 [X] - It must be possible to register as an organization (ORG).
 
@@ -19,13 +19,13 @@ This is an API for animal adoption, the **FindAFriend API**, using SOLID princip
 
 ## Business Rules
 
-[ ] - To list the pets, it is mandatory to provide the city.
+[X] - To list the pets, it is mandatory to provide the city.
 
 [X] - An ORG must have an address and a WhatsApp number.
 
 [X] - A pet must be associated with an ORG.
 
-[ ] - The user who wants to adopt will contact the ORG via WhatsApp.
+[X] - The user who wants to adopt will contact the ORG via WhatsApp.
 
 [ ] - All filters, other than the city, are optional.
 

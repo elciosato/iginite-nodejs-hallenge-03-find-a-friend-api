@@ -1,6 +1,8 @@
-import { Organization, Prisma } from "@prisma/client";
+import { $Enums, Organization, Pet, Prisma } from "@prisma/client";
 import { OrganizationsRepository } from "../organizations-repository";
 import { randomUUID } from "node:crypto";
+import { ListPetsRequest } from "../../use-cases/list-pets-use-case";
+import { InMemoryPetsRepository } from "./in-memory-pets-repository";
 
 export class InMemoryOrganizationsRepository
   implements OrganizationsRepository
@@ -45,5 +47,12 @@ export class InMemoryOrganizationsRepository
     }
 
     return organization;
+  }
+
+  async findOrgsByCityState({ city, state }: ListPetsRequest) {
+    const orgs = this.organizationsRepository.filter((org) => {
+      return org.city === city && org.state === state;
+    });
+    return orgs;
   }
 }
