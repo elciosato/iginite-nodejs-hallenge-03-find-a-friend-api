@@ -7,7 +7,13 @@ import { env } from "./env";
 
 export const app = fastify();
 
-app.register(fastifyJWT, { secret: env.JWT_SECRET });
+app.register(fastifyJWT, {
+  secret: env.JWT_SECRET,
+  cookie: { cookieName: "refreshToken", signed: false },
+  sign: {
+    expiresIn: "5m",
+  },
+});
 app.register(fastifyCookie);
 
 app.register(appRoutes);

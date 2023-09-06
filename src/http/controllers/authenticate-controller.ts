@@ -28,7 +28,7 @@ export async function authenticateController(
       {
         sign: {
           sub: organization.id,
-          expiresIn: "10m",
+          expiresIn: "5m",
         },
       }
     );
