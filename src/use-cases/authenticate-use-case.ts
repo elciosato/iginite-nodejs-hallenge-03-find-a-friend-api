@@ -1,7 +1,6 @@
 import { Organization } from "@prisma/client";
 import { compare, hash } from "bcryptjs";
 import { OrganizationsRepository } from "../repositories/organizations-repository";
-import { OrganizationAlreadyExistsError } from "./errors/organization-already-exists-error";
 import { InvalidCredentialsError } from "./errors/invalid-credentials-error";
 
 interface AuthenticateRequest {

@@ -1,9 +1,14 @@
 import fastify from "fastify";
+import fastifyJWT from "@fastify/jwt";
+import fastifyCookie from "@fastify/cookie";
 import { appRoutes } from "./http/app-routes";
 import { ZodError } from "zod";
 import { env } from "./env";
 
 export const app = fastify();
+
+app.register(fastifyJWT, { secret: env.JWT_SECRET });
+app.register(fastifyCookie);
 
 app.register(appRoutes);
 
