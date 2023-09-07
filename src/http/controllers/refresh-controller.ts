@@ -7,7 +7,7 @@ export async function refreshController(
   await request.jwtVerify({ onlyCookie: true });
 
   const token = await reply.jwtSign(
-    {},
+    { accessToken: true },
     {
       sign: {
         sub: request.user.sub,

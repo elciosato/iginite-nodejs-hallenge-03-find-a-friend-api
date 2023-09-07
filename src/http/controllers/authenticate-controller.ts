@@ -24,7 +24,7 @@ export async function authenticateController(
     });
 
     const token = await reply.jwtSign(
-      {},
+      { accessToken: true },
       {
         sign: {
           sub: organization.id,
