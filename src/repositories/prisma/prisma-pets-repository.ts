@@ -31,7 +31,14 @@ export class PrismaPetsRepository implements PetsRepository {
     const orgsIds = orgs.map((o) => o.id);
     const pets = prisma.pet.findMany({
       where: {
-        organizationId: { in: orgsIds },
+        AND: [
+          { organizationId: { in: orgsIds } },
+          { age },
+          { size },
+          { energyLevel },
+          { independenceLevel },
+          { physicalSpace },
+        ],
       },
     });
 
