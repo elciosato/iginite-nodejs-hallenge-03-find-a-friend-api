@@ -1,6 +1,8 @@
 import { FastifyReply, FastifyRequest } from "fastify";
 import { makeCreateOrganizationUseCase } from "../../use-cases/factories/make-create-organization-use-case";
 import { z } from "zod";
+import { OrganizationAlreadyExistsError } from "../../use-cases/errors/organization-already-exists-error";
+import { error } from "console";
 
 export async function createOrganizationController(
   request: FastifyRequest,
@@ -30,16 +32,25 @@ export async function createOrganizationController(
 
   const createOrganizationUseCase = makeCreateOrganizationUseCase();
 
-  const organization = await createOrganizationUseCase.execute({
-    email,
-    password,
-    responsablePerson,
-    postCode,
-    city,
-    state,
-    address,
-    whatsapp,
-  });
+  try {
+    const organization = await createOrganizationUseCase.execute({
+      email,
+      password,
+      responsablePerson,
+      postCode,
+      city,
+      state,
+      address,
+      whatsapp,
+    });
 
-  return reply.status(201).send("Organization created");
+    return reply.status(201).send("Organization created");
+  } catch (err) {
+    if (err instanceof OrganizationAlreadyExistsError) {
+      return reply.status(400).send({
+        message: err.message,
+      });
+    }
+    throw err;
+  }
 }
