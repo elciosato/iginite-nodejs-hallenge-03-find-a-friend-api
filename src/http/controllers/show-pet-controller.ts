@@ -17,7 +17,7 @@ export async function showPetController(
   const showPetUseCase = makeShowPetUseCase();
 
   try {
-    const pet = await showPetUseCase.execute({ id });
+    const { pet } = await showPetUseCase.execute({ id });
     return reply.status(200).send({
       pet,
     });
