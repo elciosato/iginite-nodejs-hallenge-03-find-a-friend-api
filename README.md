@@ -29,7 +29,7 @@ This is an API for animal adoption, the **FindAFriend API**, using SOLID princip
 
 [X] - All filters, other than the city, are optional.
 
-[ ] - For an ORG to access the application as an admin, they need to be logged in.
+[X] - For an ORG to access the application as an admin, they need to be logged in.
 
 ## Layout
 
